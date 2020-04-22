@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // JavaScript提供了encodeURIComponent与decodeURIComponent方法组合来对查询字符串进行编码与解码。
+        // 1.将encodeURIComponent方法编码后的字符串进行处理，最终得到对应的字节数组。
+        function UTF8_Encoding(string) {
+            const code = encodeURIComponent(string);
+            const byteArr = [];
+            for (var i = 0; i < code.length; i++) {
+                const c = code.charAt(i);
+                if (c === '%') {
+                    const hex = code.charAt(i + 1) + code.charAt(i + 2);
+                    const hexVal = parseInt(hex, 16);
+                    byteArr.push(hexVal);
+                    i += 2;
+                } else byteArr.push(c.charCodeAt(0));
+            }
+            return byteArr;
+        }
+        // 将以UTF-8编码的字节序列解码为String
+        function decodeUtf8(byteArr) {
+            var encoded = "";
+            for (var i = 0; i < byteArr.length; i++) {
+                encoded += '%' + byteArr[i].toString(16);
+            }
+            return decodeURIComponent(encoded);
+        }
+
+        var array = UTF8_Encoding('极客大学666');
+        console.log(array); // [230, 158, 129, 229, 174, 162, 229, 164, 167, 229, 173, 166, 54, 54, 54] 
+        var content = decodeUtf8(array);
+        console.log(content); // 极客大学666
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // JavaScript 规范中规定的数字直接量可以支持四种写法：十进制数、二进制整数、八进制整数和十六进制整数。
+        // 十进制包含了一些列的不以0开头的数字，十进制的 Number 可以带小数，小数点前后部分都可以省略，但是不能同时省略
+        var tenReg = /[1-9]\d*\.?\d*|0\.d*[1-9]/;
+        // 在八进制中，是以0开头的，并且八进制只能包括从0到7的数字 
+        var eigReg = /^[0-7]+$/;
+        // 在十六进制中，是以0x（或者0X）开头来表示的。十六进制只能包括从0-9和字母从a-f和A-F
+
+        var sixtReg = /^[0-9a-fA-F]{1,3}$/; //1为下限，3为上限，就是最少一个，最多3个 
+        // 二进制：二进制数字是由0和1两个数字组合而成.逢二进一
+        var twoReg = /^[01]+$/;
+    </script>
+</body>
+
+</html>
