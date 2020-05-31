@@ -280,7 +280,7 @@ function layout(element) {
         step = 0;
     }
     if (style.alignContent === 'flex-end') {
-        crossBase += 0 = crossBase * crossSpace;
+        crossBase += crossBase * crossSpace;
         step = 0;
     }
     if (style.alignContent === 'center') {

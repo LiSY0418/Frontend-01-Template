@@ -201,7 +201,7 @@ class TrunkedBodyParser{
                 }
             }
         }
-        
+
 
     }
 
@@ -218,7 +218,7 @@ void async function() {
             name: "Li"
         }
     });
-    let = response = await request.send();
+    let response = await request.send();
     console.log(response);
     let dom =parser.parseHTML(response.body);
     console.log(dom);
@@ -228,6 +228,9 @@ void async function() {
     viewport.save("viewport.jpg")
 
 }();
+
+
+
 
 
 // const client = net.createConnection({

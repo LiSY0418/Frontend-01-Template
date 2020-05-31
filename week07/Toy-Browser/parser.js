@@ -78,7 +78,7 @@ function computeCSS(element) {
 
         var j = 1;
         for (var i = 0; i < elements.length; i++) {
-            for (match(elements[i], selectorParts[j])) {
+            if (match(elements[i], selectorParts[j])) {
                 j++;
             }
         }
